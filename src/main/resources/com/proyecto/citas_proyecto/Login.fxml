@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.proyecto.citas_proyecto.Controller.LoginController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<HBox spacing="50"
+      alignment="CENTER"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.tuapp.LoginController"
+      style="-fx-padding: 40; -fx-background-color: #ecf0f1;">
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+    <VBox spacing="12"
+          alignment="CENTER"
+          prefWidth="320"
+          style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+        <Label text="REGISTRO"
+               style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="txtNombre" promptText="Nombre"/>
+        <TextField fx:id="txtApellido" promptText="Apellido"/>
+        <TextField fx:id="txtCorreo" promptText="Correo"/>
+        <PasswordField fx:id="txtPasswordReg" promptText="Contraseña"/>
+
+        <Button text="Registrar"
+                fx:id="btnRegistrar"
+                onAction="#registrar"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+    </VBox>
+
+
+    <VBox spacing="12"
+          alignment="CENTER"
+          prefWidth="320"
+          style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+        <Label text="LOGIN"
+               style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+
+        <TextField fx:id="txtUsuario" promptText="Usuario"/>
+        <PasswordField fx:id="txtPasswordLogin" promptText="Contraseña"/>
+
+        <Button text="Ingresar"
+                fx:id="btnLogin"
+                onAction="#login"
+                style="-fx-background-color: #2980b9; -fx-text-fill: white;"/>
+    </VBox>
+
+</HBox>
