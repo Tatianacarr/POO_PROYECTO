@@ -1,0 +1,197 @@
+
+
+.background{
+
+    -fx-background-color:
+            linear-gradient(to bottom right,
+            #FFF7FB,
+            #F6F0FF,
+            #EEF8FF);
+
+}
+
+.card{
+
+    -fx-background-color:white;
+
+    -fx-background-radius:35;
+
+    -fx-border-radius:35;
+
+    -fx-padding:35;
+
+    -fx-border-color:#ECE7F7;
+
+    -fx-border-width:1;
+
+    -fx-effect:dropshadow(
+            gaussian,
+            rgba(120,110,180,0.20),
+            28,
+            0.25,
+            0,
+            8
+    );
+
+}
+
+.titulo{
+
+    -fx-font-size:27px;
+
+    -fx-font-weight:bold;
+
+    -fx-text-fill:#6E5DAA;
+
+}
+
+
+.subtitulo{
+
+    -fx-font-size:13px;
+
+    -fx-text-fill:#8A8A8A;
+
+}
+
+
+.text-field,
+.password-field{
+
+    -fx-pref-width:280;
+
+    -fx-pref-height:46;
+
+    -fx-font-size:14px;
+
+    -fx-background-radius:25;
+
+    -fx-border-radius:25;
+
+    -fx-background-color:#FBFAFF;
+
+    -fx-border-color:#DDD4F8;
+
+    -fx-border-width:2;
+
+    -fx-padding:0 18 0 18;
+
+}
+
+
+.text-field:focused,
+.password-field:focused{
+
+    -fx-background-color:white;
+
+    -fx-border-color:#C3B2F9;
+
+    -fx-effect:dropshadow(
+            gaussian,
+            rgba(189,173,255,.40),
+            10,
+            0,
+            0,
+            2
+    );
+
+}
+
+.btnLogin{
+
+    -fx-background-color:
+            linear-gradient(to right,#A7D8FF,#8FCBFF);
+
+    -fx-text-fill:white;
+
+    -fx-font-size:15px;
+
+    -fx-font-weight:bold;
+
+    -fx-pref-width:230;
+
+    -fx-pref-height:45;
+
+    -fx-background-radius:25;
+
+    -fx-cursor:hand;
+
+}
+
+.btnLogin:hover{
+
+    -fx-background-color:
+            linear-gradient(to right,#8CCBFF,#6EB8FF);
+
+    -fx-scale-x:1.04;
+
+    -fx-scale-y:1.04;
+
+}
+
+
+.btnRegistro{
+
+    -fx-background-color:
+            linear-gradient(to right,#E8B7FF,#D8A6FF);
+
+    -fx-text-fill:white;
+
+    -fx-font-size:15px;
+
+    -fx-font-weight:bold;
+
+    -fx-pref-width:230;
+
+    -fx-pref-height:45;
+
+    -fx-background-radius:25;
+
+    -fx-cursor:hand;
+
+}
+
+.btnRegistro:hover{
+
+    -fx-background-color:
+            linear-gradient(to right,#DA9DFF,#CB8AFF);
+
+    -fx-scale-x:1.04;
+
+    -fx-scale-y:1.04;
+
+}
+
+.text-field,
+.password-field{
+
+    -fx-prompt-text-fill:#B6B6B6;
+
+}
+
+
+.label{
+
+    -fx-font-family:"Segoe UI";
+
+}
+.cmbCategoria{
+    -fx-pref-width:280;
+
+    -fx-pref-height:46;
+
+    -fx-font-size:14px;
+
+    -fx-background-radius:25;
+
+    -fx-border-radius:25;
+
+    -fx-background-color:#FBFAFF;
+
+    -fx-border-color:#DDD4F8;
+
+    -fx-border-width:2;
+
+    -fx-padding:0 18 0 18;
+
+}

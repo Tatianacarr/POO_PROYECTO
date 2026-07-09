@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="700.0" prefWidth="1000.0" styleClass="background" stylesheets="@../../../Styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.citas_proyecto.Controller.CrudController">
+
+    <left>
+        <VBox alignment="TOP_CENTER" prefWidth="220.0" spacing="15.0" styleClass="card" stylesheets="@../../../Styles.css" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="30.0" left="15.0" right="15.0" top="30.0" />
+            </padding>
+            <children>
+                <Label fx:id="lblBienvenida" styleClass="titulo" stylesheets="@../../../Styles.css" text="🌸 Panel Principal" textAlignment="CENTER" wrapText="true" />
+                <Separator prefWidth="200.0" />
+
+                <Button fx:id="btnMenuInicio" maxWidth="Infinity" styleClass="btnLogin" text="Inicio / Servicios" />
+                <Button fx:id="btnMenuPaciente" maxWidth="Infinity" styleClass="btnRegistro" text="Panel Paciente" />
+                <Button fx:id="btnMenuMedico" maxWidth="Infinity" styleClass="btnLogin" text="Panel Médico" />
+                <Button fx:id="btnMenuAdmin" maxWidth="Infinity" styleClass="btnRegistro" text="Panel Admin" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <children>
+
+                <VBox fx:id="panelInicio" spacing="15.0" styleClass="card" stylesheets="@../../../Styles.css">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="titulo" text="💜 Bienvenidos a MediCitas ESPE" />
+                        <Label styleClass="subtitulo" text="Nuestra plataforma automatiza la gestión de consultas médicas de forma ágil y segura." />
+                        <Separator />
+
+                        <Label styleClass="titulo" text="✨ Nuestros Servicios Disponibles:" />
+                        <Label text="• 🌸 PACIENTES: Consulta de catálogo médico, agendamiento autónomo y visualización de historial de citas." />
+                        <Label text="• 🩺 MÉDICOS: Control de agenda personalizada, revisión de pacientes asignados y cierre de consultas completadas." />
+                        <Label text="• 🛠️ ADMINISTRADORES: Auditoría global del sistema, cancelación forzosa de turnos y buscador avanzado de citas por ID." />
+
+                        <Separator />
+                        <Label styleClass="subtitulo" text="Selecciona tu apartado correspondiente en el menú lateral para comenzar a operar." style="-fx-font-style: italic;" />
+                    </children>
+                </VBox>
+
+                <VBox fx:id="panelPaciente" spacing="15.0" styleClass="card" stylesheets="@../../../Styles.css" visible="false">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="titulo" text="🌸 Panel de Servicios para Pacientes" />
+                        <Label styleClass="subtitulo" text="Servicios: Agendar nuevas citas médicas y revisar el estado de tus solicitudes actuales." />
+
+                        <HBox spacing="15.0">
+                            <children>
+                                <ComboBox fx:id="cmbEspecialidad" prefWidth="200.0" promptText="Especialidad" styleClass="cmbCategoria" />
+                                <ComboBox fx:id="cmbMedico" prefWidth="200.0" promptText="Médico Disponible" styleClass="cmbCategoria" />
+                            </children>
+                        </HBox>
+
+                        <HBox spacing="15.0">
+                            <children>
+                                <DatePicker fx:id="dpFecha" prefWidth="200.0" promptText="Fecha de la Cita" />
+                                <TextField fx:id="txtHora" prefWidth="200.0" promptText="Hora (HH:MM:SS)" styleClass="text-field" />
+                            </children>
+                        </HBox>
+
+                        <TextArea fx:id="txtDescripcion" prefHeight="60.0" promptText="Síntomas o motivo de la consulta..." styleClass="text-field" />
+                        <Button onAction="#guardarCita" styleClass="btnRegistro" text="Confirmar Turno" />
+
+                        <Separator prefWidth="200.0" />
+                        <Label styleClass="subtitulo" text="📋 Mi Historial de Citas Reservadas:" />
+                        <TableView fx:id="tablaMisCitas" VBox.vgrow="ALWAYS" />
+                    </children>
+                </VBox>
+
+                <VBox fx:id="panelMedico" spacing="15.0" styleClass="card" stylesheets="@../../../Styles.css" visible="false">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="titulo" text="🩺 Panel de Control Médico" />
+                        <Label styleClass="subtitulo" text="Servicios: Visualizar pacientes que agendaron con usted y cambiar estado de la consulta." />
+
+                        <Label styleClass="subtitulo" text="👥 Pacientes Citados y Asignados a su Nombre:" />
+                        <TableView fx:id="tablaCitasMedicas" VBox.vgrow="ALWAYS" />
+
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnCompletarCita" onAction="#marcarCitaCompletada" styleClass="btnLogin" text="Marcar como Completada" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="panelAdmin" spacing="15.0" styleClass="card" stylesheets="@../../../Styles.css" visible="false">
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                    <children>
+                        <Label styleClass="titulo" text="🛠️ Panel de Gestión Administrativa" />
+                        <Label styleClass="subtitulo" text="Servicios: Control total del sistema y búsqueda centralizada de citas por ID único." />
+
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <TextField fx:id="txtBuscarId" prefWidth="180.0" promptText="Buscar Cita por ID..." styleClass="text-field" />
+                                <Button onAction="#buscarCitaPorId" styleClass="btnLogin" text="🔍 Buscar" />
+                                <Button onAction="#restablecerTablaAdmin" styleClass="btnRegistro" text="🔄 Ver Todas" />
+                            </children>
+                        </HBox>
+
+                        <TableView fx:id="tablaTodasLasCitas" VBox.vgrow="ALWAYS" />
+
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <children>
+                                <Button fx:id="btnEliminarCitaAdmin" onAction="#eliminarCitaAdministrador" styleClass="btnRegistro" text="Eliminar Cita Seleccionada" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>
