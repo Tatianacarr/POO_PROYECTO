@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox alignment="CENTER" spacing="70" styleClass="background" stylesheets="@../../../Styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyecto.citas_proyecto.Controller.LoginController">
+
+    <padding>
+        <Insets bottom="40" left="40" right="40" top="40" />
+    </padding>
+
+    <VBox alignment="CENTER" prefWidth="360" spacing="18" styleClass="card" stylesheets="@../../../Styles.css">
+
+        <Label styleClass="titulo" stylesheets="@../../../Styles.css" text="🌸 Crear Cuenta" />
+
+        <Label styleClass="subtitulo" stylesheets="@../../../Styles.css" text="Complete los datos para registrarse" />
+
+        <TextField fx:id="txtNombre" promptText="Nombre" styleClass="text-field" stylesheets="@../../../Styles.css" />
+
+        <TextField fx:id="txtApellido" promptText="Apellido" styleClass="text-field" stylesheets="@../../../Styles.css" />
+
+        <TextField fx:id="txtCorreo" promptText="Correo electrónico" styleClass="text-field" stylesheets="@../../../Styles.css" />
+
+        <PasswordField fx:id="txtPasswordReg" promptText="Contraseña" styleClass="password-field" stylesheets="@../../../Styles.css" />
+
+        <Button fx:id="btnRegistrar" onAction="#registrar" styleClass="btnRegistro" stylesheets="@../../../Styles.css" text="Registrarse" />
+
+    </VBox>
+
+
+    <VBox alignment="CENTER" prefWidth="360" spacing="18" styleClass="card" stylesheets="@../../../Styles.css">
+
+        <Label styleClass="titulo" stylesheets="@../../../Styles.css" text="💜 Bienvenido" />
+
+        <Label styleClass="subtitulo" stylesheets="@../../../Styles.css" text="Ingrese sus credenciales" />
+
+        <TextField fx:id="txtUsuario" promptText="Correo" styleClass="text-field" stylesheets="@../../../Styles.css" />
+
+        <PasswordField fx:id="txtPasswordLogin" promptText="Contraseña" styleClass="password-field" stylesheets="@../../../Styles.css" />
+
+        <Button fx:id="btnLogin" onAction="#login" styleClass="btnLogin" stylesheets="@../../../Styles.css" text="Iniciar Sesión" />
+
+    </VBox>
+
+</HBox>
